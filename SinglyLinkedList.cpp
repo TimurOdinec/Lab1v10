@@ -1,10 +1,11 @@
 #include "SinglyLinkedList.h"
+#include <iostream>
 
-class SinglyLinkedList
+SinglyLinkedList::SinglyLinkedList()
 {
-private:
-
-public:
-	SinglyLinkedList();
-	~SinglyLinkedList();
+	std::cout << "constructor SinglyLinkedList()" << std::endl;
 };
+SinglyLinkedList::~SinglyLinkedList()
+{
+	std::cout << "destructor ~SinglyLinkedList()" << std::endl;
+}

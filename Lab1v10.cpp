@@ -2,34 +2,63 @@
 // 
 // 
 //10.	Создать класс типа «Односвязный список». 
-//Функции-члены добавляют элемент к списку, 
-//удаляют элемент из списка, 
-//печатают элементы с начала списка. 
-//Найти элемент в списке.
+//Функции-члены добавляют элемент к списку, (вставляем в начало списка)
+//удаляют элемент из списка, (по значению)
+//печатают элементы с начала списка. (весь список с начала)
+//Найти элемент в списке. (по значению)
 //
 //Односвязный список - это динамическая структура данных, состоящая из узлов. 
 //Каждый узел будет иметь какое-то значение и указатель на следующий узел.
 
 
 #include <iostream>
-//#include "SinglyLinkedList.h"
-
+#include "SinglyLinkedList.h"
+#include "Message.h"
 
 int main()
 {
-	std::cout << "Hello World!\n";
+	setlocale(LC_ALL, "Russian");
+	Message *message = new Message();
+	message->viewBorder();
+	SinglyLinkedList *singlyLinkedList = new SinglyLinkedList();
+	message->viewMessageAdd();
+	int valNode1 = 33;
+	int valNode2 = 55;
+	int valNode3 = 11;
+	int valNode4 = 88;
+	int valNode5 = 543;
 
+	singlyLinkedList->addNode(valNode1);
+	singlyLinkedList->viewSinglyLinkedList();
+	singlyLinkedList->addNode(valNode2);
+	singlyLinkedList->viewSinglyLinkedList();
+	singlyLinkedList->addNode(valNode3);
+	singlyLinkedList->viewSinglyLinkedList();
+	singlyLinkedList->addNode(valNode4);
+	singlyLinkedList->viewSinglyLinkedList();
+
+	message->viewBorder();
+	message->viewMessageExsist(valNode1);
+	bool isExsist = singlyLinkedList->isNodeExsist(valNode1);
+	message->viewMessageExsistResult(isExsist);
+	message->viewMessageExsist(valNode5);
+	isExsist = singlyLinkedList->isNodeExsist(valNode5);
+	message->viewMessageExsistResult(isExsist);
+
+	message->viewBorder();
+	singlyLinkedList->viewSinglyLinkedList();
+	message->viewMessageDelete(valNode2);
+	singlyLinkedList->deleteFirstSearchNode(valNode2);
+	singlyLinkedList->viewSinglyLinkedList();
+	message->viewMessageDelete(valNode4);
+	singlyLinkedList->deleteFirstSearchNode(valNode4);
+	singlyLinkedList->viewSinglyLinkedList();
+	message->viewMessageDelete(valNode1);
+	singlyLinkedList->deleteFirstSearchNode(valNode1);
+	singlyLinkedList->viewSinglyLinkedList();
+	message->viewBorder();
+	singlyLinkedList->~SinglyLinkedList();
 }
 
 
 
-// Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
-// Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
-
-// Советы по началу работы 
-//   1. В окне обозревателя решений можно добавлять файлы и управлять ими.
-//   2. В окне Team Explorer можно подключиться к системе управления версиями.
-//   3. В окне "Выходные данные" можно просматривать выходные данные сборки и другие сообщения.
-//   4. В окне "Список ошибок" можно просматривать ошибки.
-//   5. Последовательно выберите пункты меню "Проект" > "Добавить новый элемент", чтобы создать файлы кода, или "Проект" > "Добавить существующий элемент", чтобы добавить в проект существующие файлы кода.
-//   6. Чтобы снова открыть этот проект позже, выберите пункты меню "Файл" > "Открыть" > "Проект" и выберите SLN-файл.

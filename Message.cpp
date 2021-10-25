@@ -1,6 +1,7 @@
 #include "Message.h"
 #include <iostream>
 
+
 /// <summary>
 /// конструктор без параметров
 /// </summary>
